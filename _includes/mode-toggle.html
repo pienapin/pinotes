@@ -40,10 +40,12 @@
             if (!self.isSysDarkPrefer) {
               self.setDark();
             }
+            document.getElementById('avatar-img').src = 'assets/img/avatar_light.png'
           } else {
             if (self.isSysDarkPrefer) {
               self.setLight();
             }
+            document.getElementById('avatar-img').src = 'assets/img/avatar_dark.png'
           }
 
           self.clearMode();
@@ -117,21 +119,27 @@
         if (this.isSysDarkPrefer) {
           if (this.isLightMode) {
             this.clearMode();
+            document.getElementById('avatar-img').src = 'assets/img/avatar_light.png'
           } else {
             this.setLight();
+            document.getElementById('avatar-img').src = 'assets/img/avatar_dark.png'
           }
         } else {
           if (this.isDarkMode) {
             this.clearMode();
+            document.getElementById('avatar-img').src = 'assets/img/avatar_dark.png'
           } else {
             this.setDark();
+            document.getElementById('avatar-img').src = 'assets/img/avatar_light.png'
           }
         }
       } else {
         if (this.isSysDarkPrefer) {
           this.setLight();
+          document.getElementById('avatar-img').src = 'assets/img/avatar_dark.png'
         } else {
           this.setDark();
+          document.getElementById('avatar-img').src = 'assets/img/avatar_light.png'
         }
       }
 
