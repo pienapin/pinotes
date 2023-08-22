@@ -74,10 +74,18 @@ layout: compress
     {% include_cached search-loader.html %}
 
     <script>
-      if (document.documentElement.getAttribute('data-mode') == 'dark' || sessionStorage.getItem('mode') == 'dark') {
-        document.getElementById('avatar-img').src = '/assets/img/avatar_light.png'
+      if (modeToggle.hasMode) {
+        if (document.documentElement.getAttribute('data-mode') == 'dark' || sessionStorage.getItem('mode') == 'dark') {
+          document.getElementById('avatar-img').src = '/assets/img/avatar_light.png'
+        } else {
+          document.getElementById('avatar-img').src = '/assets/img/avatar_dark.png'
+        }
       } else {
-        document.getElementById('avatar-img').src = '/assets/img/avatar_dark.png'
+        if (modeToggle.isSysDarkPrefer) {
+          document.getElementById('avatar-img').src = '/assets/img/avatar_light.png'
+        } else {
+          document.getElementById('avatar-img').src = '/assets/img/avatar_dark.png'
+        }
       }
     </script>
   </body>
