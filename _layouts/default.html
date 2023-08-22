@@ -72,5 +72,13 @@ layout: compress
     {% endif %}
 
     {% include_cached search-loader.html %}
+
+    <script>
+      if (document.documentElement.getAttribute('data-mode') == 'dark') {
+        document.getElementById('avatar-img').src = 'assets/img/avatar_light.png'
+      } else {
+        document.getElementById('avatar-img').src = 'assets/img/avatar_dark.png'
+      }
+    </script>
   </body>
 </html>

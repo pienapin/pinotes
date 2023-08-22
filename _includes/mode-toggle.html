@@ -23,12 +23,10 @@
         if (this.isDarkMode) {
           if (!this.isSysDarkPrefer) {
             this.setDark();
-            document.getElementById('avatar-img').src = 'assets/img/avatar_light.png'
           }
         } else {
           if (this.isSysDarkPrefer) {
             this.setLight();
-            document.getElementById('avatar-img').src = 'assets/img/avatar_dark.png'
           }
         }
       }
