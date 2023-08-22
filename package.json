@@ -11,7 +11,7 @@
   "bugs": {
     "url": "https://github.com/pienapin/pienotes/issues"
   },
-  "homepage": "https://github.com/pienapin/pinotes/",
+  "homepage": "notes.pien.my.id",
   "scripts": {
     "prebuild": "npx rimraf assets/js/dist",
     "build": "NODE_ENV=production npx rollup -c --bundleConfigAsCjs",
