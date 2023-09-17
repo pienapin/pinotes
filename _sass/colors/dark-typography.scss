@@ -4,7 +4,7 @@
 
 @mixin dark-scheme {
   /* Framework color */
-  --main-bg: rgb(20, 20, 20);
+  --main-bg: #0e0e0e;
   --mask-bg: rgb(68, 69, 70);
   --main-border-color: rgb(44, 45, 45);
 
@@ -12,17 +12,17 @@
   --text-color: rgb(175, 176, 177);
   --text-muted-color: rgb(125, 136, 146);
   --heading-color: #cccccc;
-  --label-color: #a4a4c2;
+  --label-color: #cdcdcd;
   --blockquote-border-color: rgb(66, 66, 66);
   --blockquote-text-color: #868686;
-  --link-color: rgb(138, 180, 248);
+  --link-color: rgb(141, 168, 211);
   --link-underline-color: rgb(82, 108, 150);
   --button-bg: rgb(39, 40, 43);
   --btn-border-color: rgb(63, 65, 68);
   --btn-backtotop-color: var(--text-color);
   --btn-backtotop-border-color: var(--btn-border-color);
   --btn-box-shadow: var(--main-bg);
-  --card-header-bg: rgb(48, 48, 48);
+  --card-header-bg: rgb(24, 24, 24);
   --checkbox-color: rgb(118, 120, 121);
   --checkbox-checked-color: var(--link-color);
   --img-bg: radial-gradient(circle, rgb(22, 22, 24) 0%, rgb(32, 32, 32) 100%);
@@ -91,7 +91,7 @@
   --dash-color: rgb(63, 65, 68);
 
   /* categories */
-  --categories-border: rgb(64, 66, 69, 0.5);
+  --categories-border: rgb(64, 66, 69, 0);
   --categories-hover-bg: rgb(73, 75, 76);
   --categories-icon-hover-color: white;
 

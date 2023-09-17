@@ -44,11 +44,11 @@ That's it.
 
 ## The Things
 ### 1. Prepare the installation medium
-#### Download the Arch Linux ISO from https://archlinux.org/download/
+#### - Download the Arch Linux ISO from https://archlinux.org/download/
 
 It might be confusing since there is so much blue text (hyperlink) that you can click, but just scroll down then you will see link for each country, you can choose any or choose one that probably most nearest from your location.
 
-#### Put the ISO file to your USB drive
+#### - Put the ISO file to your USB drive
 
 If you are from Windows, you can use [Balena Etcher](https://etcher.balena.io/), download it from there, choose between installer or portable (i use the portable one).
 
@@ -60,7 +60,7 @@ Select your USB drive on "Select target". Then, click "Flash!".
 
 Wait, and you are done!
 
-#### Boot into your Arch Linux installation medium
+#### - Boot into your Arch Linux installation medium
 
 Connect your USB drive to your device.
 
@@ -70,4 +70,4 @@ Change your BOOT order so that the USB drive is the first one.
 
 Save and exit.
 
-Congratulations, you are in Arch Linux. But, it is not installed yet, you are on your USB drive.
+Congratulations, you are in Arch Linux. But, it is not installed yet, you are only on your USB drive.
