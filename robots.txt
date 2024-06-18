@@ -1,4 +1,4 @@
-Sitemap: https://notes.pien.my.id/sitemap.xml
+Sitemap: notes.pien.my.id/sitemap.xml
 
 User-agent: *
 Disallow:
