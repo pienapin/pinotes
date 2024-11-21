@@ -45,11 +45,11 @@ chsh -s $(which zsh)
 mkdir -p .config/zsh
 ```
 6. Create a '/home/username/.zshenv' file which contains
-```
+```txt
 export ZDOTDIR="$HOME/config/zsh"
 ```
 7. Create a '/home/config/zsh/.zshrc' file and put in lines below
-```zsh
+```txt
 HISTFILE=~/.config/zsh/history
 HISTSIZE=10000
 SAVEHIST=2500
@@ -66,13 +66,13 @@ That is basic configuration which sets the history file, autocompletions, and se
 ```console
 git clone --depth=1 https://github.com/mattmc3/antidote.git ${ZDOTDIR:-~}/.antidote
 ```
-9. Create a `/home/username/config/zsh/zsh_plugins.txt` which contains the plugins that we want to install. For example,
+9. Create a '/home/username/config/zsh/zsh_plugins.txt' which contains the plugins that we want to install. For example,
 ```txt
 zsh-users/zsh-autosuggestions
 zdharma-continuum/fast-syntax-highlighting kind:defer
 ```
 10. Load the antidote inside the .zshrc file by adding lines below
-```zsh
+```txt
 source ${ZDOTDIR}/.antidote/antidote.zsh
 antidote load ${ZDOTDIR}/zsh_plugins.txt
 ```
@@ -82,7 +82,7 @@ antidote load ${ZDOTDIR}/zsh_plugins.txt
 paru -S starship
 ```
 13. Load by adding this line to the end of the file of .zshrc
-```zsh
+```txt
 eval "$(starship init zsh)"
 ```
 14. Configure starship in '/home/username/.config/starship.toml'
