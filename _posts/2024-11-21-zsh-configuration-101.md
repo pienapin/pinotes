@@ -61,6 +61,7 @@ zstyle ':completion:*' menu select
 autoload -Uz compinit
 compinit
 ```
+
 That is the basic configuration which sets the history file, auto completions, and select completion.
 
 8. Clone the zsh antidote into the zsh config directory
