@@ -49,7 +49,6 @@ mkdir -p .config/zsh
 export ZDOTDIR="$HOME/config/zsh"
 ```
 7. Create a `~/.config/zsh/.zshrc` file and put in lines below
-
   ```text
   HISTFILE=~/.config/zsh/history
   HISTSIZE=10000
@@ -62,9 +61,7 @@ export ZDOTDIR="$HOME/config/zsh"
   autoload -Uz compinit
   compinit
   ```
-
-  That is the basic configuration which sets the history file, auto completions, and select completion.
-
+   That is the basic configuration which sets the history file, auto completions, and select completion.
 8. Clone the zsh antidote into the zsh config directory
 ```console
 git clone --depth=1 https://github.com/mattmc3/antidote.git ${ZDOTDIR:-~}/.antidote
