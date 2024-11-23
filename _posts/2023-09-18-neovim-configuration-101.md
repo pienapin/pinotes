@@ -93,25 +93,25 @@ In addition, I found a text editor called 'Onivim' while writing this. It looks 
 [lazy.nvim](https://github.com/folke/lazy.nvim) is the most stable and maintaned plugin manager for neovim. Besides being fast and pretty, it is also easy to use.
 
 1. Write lines below into `manager.lua` file 
-```lua
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not (vim.uv or vim.loop).fs_stat(lazypath) then
-  local lazyrepo = "https://github.com/folke/lazy.nvim.git"
-  local out = vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
-  if vim.v.shell_error ~= 0 then
-    vim.api.nvim_echo({
-      { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
-      { out, "WarningMsg" },
-      { "\nPress any key to exit..." },
-    }, true, {})
-    vim.fn.getchar()
-    os.exit(1)
-  end
-end
-vim.opt.rtp:prepend(lazypath)
+    ```lua
+    local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+    if not (vim.uv or vim.loop).fs_stat(lazypath) then
+      local lazyrepo = "https://github.com/folke/lazy.nvim.git"
+      local out = vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
+      if vim.v.shell_error ~= 0 then
+        vim.api.nvim_echo({
+          { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
+          { out, "WarningMsg" },
+          { "\nPress any key to exit..." },
+        }, true, {})
+        vim.fn.getchar()
+        os.exit(1)
+      end
+    end
+    vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup("plugins")
-```
+    require("lazy").setup("plugins")
+    ```
 2. Write `return {}` in the `plugins.lua` file
 
 and that's it! lazy.nvim is installed on the neovim. If we want to install any plugin, we can add the plugin inside the table `{}` in `plugins.lua` file. For example, to install plugin `Comment.nvim`, the `plugins.lua` file's content will be
