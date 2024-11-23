@@ -8,3 +8,7 @@
   {% assign content = content | replace: '<td class="rouge-gutter gl"><pre class="lineno">', '<!-- <td class="rouge-gutter gl"><pre class="lineno">'%}
   {% assign content = content | replace: '</td><td class="rouge-code">', '</td> --><td class="rouge-code">' %}
 {% endif %}
+
+{% if content contains '<h2 id="the-why"><span class="me-2">The Why</span><a href="#the-why" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>' %}
+  {% assign content = content | replace: '<h2 id="the-why"><span class="me-2">The Why</span><a href="#the-why" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>', '' %}
+{% endif %}
