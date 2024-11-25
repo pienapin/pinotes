@@ -67,12 +67,7 @@ refactor: true
           <div class="card-text post-content mt-0 mb-2">
             <p>
               {% include no-linenos.html content=post.content %}
-              <!-- {% assign content_without_header1 = content  %} -->
-              <!-- {% assign content_without_header2 = content_without_header1 | replace: '<h1[^>]*>.*?</h1>', '' %} -->
-              <!-- {% assign truncated_content = content_without_header2 | markdownify | strip_html | truncate: 200 | escape %} -->
-              <!-- {{ truncated_content }} -->
-              {{ content | replace: '<a[^>]*>.*?<hr>', '' | markdownify | strip_html | truncate: 200 | escape }}
-              <!-- {{ content | truncate: 200 }} -->
+              {{ content | markdownify | strip_html | truncate: 200 | replace: 'The Why', '' | escape }}
             </p>
           </div>
 
