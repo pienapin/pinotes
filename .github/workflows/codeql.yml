@@ -2,7 +2,7 @@ name: "CodeQL"
 
 on:
   push:
-    branches: ["master"]
+    branches: ["blogs"]
     paths: ["_javascript/**/*.js"]
   pull_request:
     paths: ["_javascript/**/*.js"]
