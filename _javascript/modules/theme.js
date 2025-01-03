@@ -75,6 +75,10 @@ class Theme {
       return;
     }
 
+    document.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('avatar-img').src = this.visualState == 'dark' ? '/assets/img/avatar_light.png' : '/assets/img/avatar_dark.png';
+    });
+
     this.#darkMedia.addEventListener('change', () => {
       const lastMode = this.#mode;
       this.#clearMode();
@@ -127,6 +131,8 @@ class Theme {
    */
   static #notify() {
     window.postMessage({ id: this.ID }, '*');
+
+    document.getElementById('avatar-img').src = this.visualState == 'dark' ? '/assets/img/avatar_light.png' : '/assets/img/avatar_dark.png';
   }
 }
 
