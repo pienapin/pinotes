@@ -4,7 +4,7 @@ author: pienapin
 date: 2024-11-21 12:40:00 +0700
 categories: [guide]
 tags: [linux, shell, zsh, technical]
-pinned: true
+pinned: false
 toc: true
 ---
 

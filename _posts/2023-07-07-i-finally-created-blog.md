@@ -4,7 +4,7 @@ author: pienapin
 date: 2023-07-07 16:50:00 +0700
 categories: [curhat]
 tags: [coding, untechnical]
-pinned: true
+pinned: false
 toc: false
 ---
 

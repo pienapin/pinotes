@@ -4,7 +4,7 @@ author: pienapin
 date: 2023-09-16 14:55:00 +0700
 categories: [guide]
 tags: [arch, linux, technical]
-pinned: true
+pinned: false
 toc: true
 ---
 

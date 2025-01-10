@@ -4,7 +4,7 @@ author: pienapin
 date: 2023-09-18 10:15:00 +0700
 categories: [guide]
 tags: [neovim, text editor, configuration, linux, technical]
-pinned: true
+pinned: false
 toc: true
 ---
 
