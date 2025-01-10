@@ -8,10 +8,6 @@ pinned: false
 toc: true
 ---
 
-## The Why
----
-
-
 ## The Requirements
 ---
 * podman
