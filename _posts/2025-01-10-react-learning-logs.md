@@ -122,3 +122,33 @@ how its exported decides how its imported.
 | :------ | :------------------------------------ | ---------------------------------------: |
 | Default | `export default function Button() {}` | `import Button from './Button.jsx';`     |
 | Named   | `export function Button() {}`         | `import { Button } from './Button.jsx';` |
+
+
+## day 2 (11/01/2025) - *props on components*
+
+props are something react components use to give information to each other.  
+it is basically almost the same with attributes in HTML, but one can use props to pass any javascript value (e.g. arrays, function, variable, objects, etc).  
+example of passing props to a component:  
+```jsx
+export default function ControlPanel() {
+  return (
+    <MyButton
+      name="Submit"
+    />
+  )
+}
+```  
+
+then to access the props in the component, one only needs to put the 'variable' of the props as parameters when defining the component, example :  
+```jsx
+export default function MyButton({ name }) {
+  return (
+    <>
+      <button>
+        { name }
+      </button>
+    </>
+  )
+}
+```  
+
