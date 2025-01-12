@@ -126,16 +126,20 @@ how its exported decides how its imported.
 
 ## day 2 (11/01/2025) - *props on components*
 
+### props on components  
+
 props are something react components use to give information to each other.  
 it is basically almost the same with attributes in HTML, but one can use props to pass any javascript value (e.g. arrays, function, variable, objects, etc).  
 example of passing props to a component:  
 ```jsx
 export default function ControlPanel() {
   return (
-    <MyButton
-      name="Submit"
-    />
-  )
+    <div>
+      <MyButton
+        name="Submit"
+      />
+    </div>
+  );
 }
 ```  
 
@@ -148,7 +152,69 @@ export default function MyButton({ name }) {
         { name }
       </button>
     </>
-  )
+  );
 }
 ```  
 
+
+## day 3 (12/01/2025) - *props on components*
+
+one can give default value to a prop just like a normal parameter.  
+one can also forward props from 'parent' components to their children.  
+instead of giving the whole props like this:  
+```jsx
+function ControlPanel({ name, color, size }) {
+  return (
+    <div>
+      <MyButton
+        name={name}
+        color={color}
+        size={size}
+        />
+    </div>
+  );
+}
+```  
+
+one can pass the props easily like this:  
+```jsx
+function ControlPanel({ name, color, size }) {
+  return (
+    <div>
+      <MyButton {...props} />
+    </div>
+  );
+}
+```  
+
+one can also pass a component as a children of another component, it will also be a `children` props.  
+```jsx
+import MyButton from './src/MyButton.jsx';
+
+function Card({ children }) {
+  return (
+    <div className="card">
+      {children}
+    </div>
+  );
+}
+
+export default function ControlPanel() {
+  return (
+    <Card>
+      <MyButton
+        name="Tombol"
+        />
+    </Card>
+  );
+}
+```
+
+thing that should be noted is, props are immutable.  
+to change something dynamically or interactivity i.e. based on user input, one should 'set state'.
+
+### state
+
+basically, state is a component's memory.  
+it lives up to its name.  
+it memorizes the component's state.  
