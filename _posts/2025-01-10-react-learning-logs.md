@@ -157,7 +157,7 @@ export default function MyButton({ name }) {
 ```  
 
 
-## day 3 (12/01/2025) - *props on components*
+## day 3 (12/01/2025) - *props and state on components*
 
 one can give default value to a prop just like a normal parameter.  
 one can also forward props from 'parent' components to their children.  
@@ -217,4 +217,46 @@ to change something dynamically or interactivity i.e. based on user input, one s
 
 basically, state is a component's memory.  
 it lives up to its name.  
-it memorizes the component's state.  
+it memorizes the component's state (current index, current image, current value, etc).  
+while basic javascript can be used to change appearance dynamically, it will not trigger React to render the new appearance.  
+`useState` is a hook that enables the use of the 'state'.
+hooks are functions that start with `use` from react.  
+hooks are functions that are only available while React is rendering.  
+`useState` provides a `state variable` that holds data/value between render and a `state setter function` to update the data/value inside the variable and trigger React to render.  
+to use `useState`, one needs to import it at the top of the file:  
+```jsx
+import { useState } from 'react';
+```  
+and then call the function, useState will return an array that always has two items, the variable and the setter:  
+```jsx
+const [index, setIndex] = useState(0);
+```  
+the argument in the `useState` is the initial value for the variable, it can be string `''`, boolean (`false` or `true`), etc.  
+example of `useState` in action:  
+```jsx
+import { useState } from "react";
+
+export default function MyButton({ textColor }) {
+  const nameArr = ['Tombol', 'Button', 'Click Me', 'I beg you, please click me',
+    '!!!!', '????', 'lol', 'dont click', 'detonate!', 'Bye'];
+  const [name, setName] = useState('Submit');
+
+  function changeName() {
+    const x = Math.floor(Math.random() * 10);
+    setName(nameArr[x]);
+  }
+
+  return (
+    <>
+      <button onClick={changeName} style={{ color: textColor }} >
+        {name}
+      </button>
+    </>
+  );
+}
+
+```  
+`nameArr` contains 10 strings that will be used as a text on the button.  
+when the button is clicked, it will call `changeName` function which randomize a number and then set the value of `name` variable from `useState` to be a random text from `nameArr` array.  
+`useState` is also isolated to each component instances (each copy gets its own state).  
+in example, if i use two `MyButton` components, the `name` variable value on each instances will be different.  
