@@ -233,6 +233,7 @@ const [index, setIndex] = useState(0);
 ```  
 the argument in the `useState` is the initial value for the variable, it can be string `''`, boolean (`false` or `true`), etc.  
 example of `useState` in action:  
+{% raw %}
 ```jsx
 import { useState } from "react";
 
@@ -256,7 +257,96 @@ export default function MyButton({ textColor }) {
 }
 
 ```  
+{% endraw %}
 `nameArr` contains 10 strings that will be used as a text on the button.  
 when the button is clicked, it will call `changeName` function which randomize a number and then set the value of `name` variable from `useState` to be a random text from `nameArr` array.  
 `useState` is also isolated to each component instances (each copy gets its own state).  
 in example, if i use two `MyButton` components, the `name` variable value on each instances will be different.  
+
+## day 4 (13/01/2025) - *conditional rendering and how rendering works*  
+
+### conditional rendering
+
+by conditional rendering, it means a react component can decide which stuff to render based on one or several conditions.  
+conditional rendering in react basically uses the same 'conditional statement' with plain javascript which are if else statements, ternary operator, etc.  
+in example, one can render something based on a prop value:  
+```jsx
+import reactLogo from '../assets/react.svg'
+import viteLogo from '/vite.svg'
+
+export default function Default({ status }) {
+  if (status == "dev") {
+    return (
+      <>
+        <div>
+          <a href="https://vite.dev" target="_blank">
+            <img src={viteLogo} className="logo" alt="Vite logo" />
+          </a>
+          <a href="https://react.dev" target="_blank">
+            <img src={reactLogo} className="logo react" alt="React logo" />
+          </a>
+        </div>
+        <h1>Vite + React</h1>
+      </>
+    )
+  } else {
+    return (
+      <>
+        <h1>Bljr-React</h1>
+      </>
+    )
+  }
+}
+```  
+on the code above, `Default` component is receiving a prop called `status`.  
+inside the component, there is a conditional rendering where if the `status` value is `"dev"` then React will render the one inside `if` body or else it will render the one inside the `else` body.  
+
+instead of props, one can also do conditional rendering with `state`, example:  
+```jsx
+import { useState } from "react";
+
+export default function AuthButton() {
+  const [isLoggedIn, setLogIn] = useState(false);
+
+  function auth() {
+    isLoggedIn ? setLogIn(false) : setLogIn(true);
+  }
+
+  return (
+    <>
+      <h2> {isLoggedIn ? 'Welcome back!' : 'Please log in...'} </h2>
+      <button onClick={auth}> {isLoggedIn ? 'Logout' : 'Login'} </button>
+    </>
+  )
+}
+```  
+code above is an `AuthButton` component which has a login/logout toggle.  
+the status of logged in or not is handled by `state`, and React will render DOM based on that.  
+
+### render and commit
+
+React serves UI through three steps:
+{: .mb-0 }
+1. trigger a render
+2. render the component
+3. commit to the DOM  
+
+two things that are triggering render are:
+{: .mb-0 }
+1. it is a component's initial render
+2. the component's state has been updated
+
+on rendering, React is calling components:  
+{: .mb-0 }
+1. on initial render, React will call the root component.  
+2. the next render, React will only call the function component whose state update triggered a render.  
+React will calculate which of the properties have changed since previous render but wont do anything until the commit phase.
+
+on committing, React will modify the DOM:  
+{: .mb-0 }
+1. on initial render, React will use the `appendChild()` DOM API to put all existing DOM nodes it has created on screen.
+2. when re-renders, React will apply the minimal operations which are calculated while rendering to update the DOM to match the latest rendering output.  
+React only changes the DOM if there is any difference between renders. So an update on a component/tag/props will not affect the others.  
+
+React utilizes a virtual DOM which is a lightweight in-memory representation of the DOM, in calculating the minimum number of DOM updates needed to bring the actual DOM to the latest.  
+VDOM is used to optimize the rendering of components in a React app.  
