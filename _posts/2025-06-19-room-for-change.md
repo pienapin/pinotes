@@ -1,3 +1,15 @@
+---
+layout: post
+title: room for change (polished)
+date: 2025-06-19 16:00 +0700
+author: pienapin
+categories: [story]
+tags: [romcom, slice of life]
+toc: false
+pinned: false
+published: true
+---
+
 "*Finally, i got the chance to move out of that damn house,*" Raela thought to herself as she got in her dorm room.
 
 The dorm room, surprisingly, met her expectations and requests: third floor, a single wide window with a view of a big tree outside. Sunlight filtered through the leaves before spilling gently into the room. The staff had told her they couldn’t promise anything, so she hadn’t held out much hope. But luck seemed to be on her side, for once.
